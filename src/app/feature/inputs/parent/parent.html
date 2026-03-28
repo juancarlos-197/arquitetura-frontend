@@ -12,13 +12,20 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Age</label>
-                    <input type="text" class="form-control" placeholder="Age" [(ngModel)]="age">
+                    <input type="number" class="form-control" placeholder="Age" [(ngModel)]="age">
                 </div>
                 <button type="submit" (click)="addProduct()" class="btn btn-primary">Add Product</button>
                 <p>Products: {{ products.length }}</p>
             </fieldset>
         </form>
     </article>
-
+    <hr>
     <app-child [firstName]="firstName" [age]="age" [products]="products"></app-child>
+    <hr>
+    <h1>Products</h1>
+    <div class="grid">
+        @for (product of products; track $index) {
+            <app-product [product]="product"></app-product>
+        }
+    </div>
 </div>

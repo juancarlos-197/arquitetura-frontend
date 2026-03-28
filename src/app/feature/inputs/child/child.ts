@@ -1,4 +1,5 @@
 import { Component, input, } from '@angular/core';
+import { Product } from '../../../core/models/product.interface';
 
 @Component({
   selector: 'app-child',
@@ -7,7 +8,8 @@ import { Component, input, } from '@angular/core';
   styleUrl: './child.css',
 })
 export class Child {
-firstName=input('');
-age=input(0);
-products=input<any[]>([]);
+  firstName = input.required<string>();
+  age = input.required<number>();
+  products = input.required<Product[]>();
+
 }
