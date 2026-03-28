@@ -1,1 +1,24 @@
-<p>parent works!</p>
+<!-- Parent Component -->
+<div class="container">
+    <article>
+        <form>
+            <fieldset>
+                <legend>
+                    <h1>PARENT COMPONENT</h1>
+                </legend>
+                <div class="mb-3">
+                    <label class="form-label">FirstName </label>
+                    <input type="text" class="form-control" placeholder="FirstName " [(ngModel)]="firstName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Age</label>
+                    <input type="text" class="form-control" placeholder="Age" [(ngModel)]="age">
+                </div>
+                <button type="submit" (click)="addProduct()" class="btn btn-primary">Add Product</button>
+                <p>Products: {{ products.length }}</p>
+            </fieldset>
+        </form>
+    </article>
+
+    <app-child [firstName]="firstName" [age]="age" [products]="products"></app-child>
+</div>

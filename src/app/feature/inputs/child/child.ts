@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './child.html',
   styleUrl: './child.css',
 })
-export class Child {}
+export class Child {
+firstName=input('');
+age=input(0);
+products=input<any[]>([]);
+}
